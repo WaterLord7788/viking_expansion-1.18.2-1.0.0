@@ -1,6 +1,7 @@
 package com.waterlord7788.viking_expansion;
 
 import com.mojang.logging.LogUtils;
+import com.waterlord7788.viking_expansion.blocks.ModBlocks;
 import com.waterlord7788.viking_expansion.items.ModItems;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -32,6 +33,7 @@ public class VikingExpansion {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
 
         eventBus.addListener(this::setup);
 
