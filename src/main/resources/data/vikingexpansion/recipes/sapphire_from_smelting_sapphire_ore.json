@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "vikingexpansion:sapphire_ore"
+  },
+  "result": "vikingexpansion:sapphire",
+  "experience": 2.0,
+  "cookingtime": 800
+}
