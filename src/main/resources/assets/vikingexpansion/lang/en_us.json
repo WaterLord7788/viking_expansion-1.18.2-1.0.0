@@ -7,5 +7,7 @@
   "block.vikingexpansion.sapphire_ore": "Sapphire Ore",
   "block.vikingexpansion.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
   "block.vikingexpansion.endstone_sapphire_ore": "Endstone Sapphire Ore",
-  "block.vikingexpansion.netherrack_sapphire_ore": "Netherrack Sapphire Ore"
+  "block.vikingexpansion.netherrack_sapphire_ore": "Netherrack Sapphire Ore",
+
+  "itemGroup.vikingexpansion": "Viking Expansion"
 }
