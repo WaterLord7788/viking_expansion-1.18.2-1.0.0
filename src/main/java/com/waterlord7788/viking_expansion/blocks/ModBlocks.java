@@ -25,6 +25,26 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(9f)
                     .requiresCorrectToolForDrops()), CreativeModeTab.TAB_MISC);
 
+    public static final RegistryObject<Block> RAW_SAPPHIRE_BLOCK = registerBlock("raw_sapphire_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(7f)
+                    .requiresCorrectToolForDrops()), CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> SAPPHIRE_ORE = registerBlock("sapphire_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
+                    .requiresCorrectToolForDrops()), CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> DEEPSLATE_SAPPHIRE_ORE = registerBlock("deepslate_sapphire_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
+                    .requiresCorrectToolForDrops()), CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> ENDSTONE_SAPPHIRE_ORE = registerBlock("endstone_sapphire_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
+                    .requiresCorrectToolForDrops()), CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> NETHERRACK_SAPPHIRE_ORE = registerBlock("netherrack_sapphire_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
+                    .requiresCorrectToolForDrops()), CreativeModeTab.TAB_MISC);
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
