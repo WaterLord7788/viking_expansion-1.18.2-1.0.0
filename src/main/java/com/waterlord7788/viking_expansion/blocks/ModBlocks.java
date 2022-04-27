@@ -1,6 +1,7 @@
 package com.waterlord7788.viking_expansion.blocks;
 
 import com.waterlord7788.viking_expansion.VikingExpansion;
+import com.waterlord7788.viking_expansion.blocks.custom.SpeedyBlock;
 import com.waterlord7788.viking_expansion.items.ModCreativeModeTab;
 import com.waterlord7788.viking_expansion.items.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -33,18 +34,21 @@ public class ModBlocks {
     public static final RegistryObject<Block> SAPPHIRE_ORE = registerBlock("sapphire_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
-
     public static final RegistryObject<Block> DEEPSLATE_SAPPHIRE_ORE = registerBlock("deepslate_sapphire_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
-
     public static final RegistryObject<Block> ENDSTONE_SAPPHIRE_ORE = registerBlock("endstone_sapphire_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
-
     public static final RegistryObject<Block> NETHERRACK_SAPPHIRE_ORE = registerBlock("netherrack_sapphire_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
+
+    public static final RegistryObject<Block> SPEEDY_BLOCK = registerBlock("speedy_block",
+            () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.STONE).strength(4f)
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
+
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
