@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "vikingexpansion:sapphire_ore",
+    "vikingexpansion:deepslate_sapphire_ore",
+    "vikingexpansion:endstone_sapphire_ore",
+    "vikingexpansion:netherrack_sapphire_ore"
+  ]
+}

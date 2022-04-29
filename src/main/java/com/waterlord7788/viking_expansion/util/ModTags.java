@@ -33,7 +33,12 @@ public class ModTags {
 
 
     public static class Items{
+        public static final TagKey<Item> ALL_SAPPHIRE_ORES
+                = forgeTag("ores/sapphire");
+
         public static final TagKey<Item> SAPPHIRE_GEMS = forgeTag("gems/sapphire");
+
+        public static final TagKey<Item> SAPPHIRE_ORES = forgeTag("ores/sapphire");
 
         private static TagKey<Item> tag(String name){
             return ItemTags.create(new ResourceLocation(VikingExpansion.MOD_ID, name));
@@ -42,7 +47,6 @@ public class ModTags {
         private static TagKey<Item> forgeTag(String name){
             return ItemTags.create(new ResourceLocation("forge", name));
         }
-
 
     }
 }
