@@ -21,5 +21,7 @@
 
 
 
-  "item.tutorialmod.dowsing_rod.no_valuables": "No Valuable Materials Found!"
+  "item.tutorialmod.dowsing_rod.no_valuables": "No Valuable Materials Found!",
+  "tooltip.vikingexpansion.dowsing_rod.tooltip.shift": "Right Click to Find Valuables!",
+  "tooltip.vikingexpansion.dowsing_rod.tooltip": "Press §eSHIFT§r for more information!"
 }
