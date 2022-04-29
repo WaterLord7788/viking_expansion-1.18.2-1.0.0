@@ -15,13 +15,15 @@
   "block.vikingexpansion.netherrack_sapphire_ore": "Netherrack Sapphire Ore",
   "block.vikingexpansion.speedy_block": "Speedy Block",
 
-
-
+  "block.vikingexpansion.sapphire_slab": "Sapphire Slab",
+  "block.vikingexpansion.sapphire_stairs": "Sapphire Stairs",
+  "block.vikingexpansion.sapphire_fence": "Sapphire Fence",
+  "block.vikingexpansion.sapphire_wall": "Sapphire Wall",
+  "block.vikingexpansion.sapphire_fence_gate": "Sapphire Fence Gate",
+  
   "itemGroup.vikingexpansion": "Viking Expansion",
 
-
-
-  "item.tutorialmod.dowsing_rod.no_valuables": "No Valuable Materials Found!",
+  "item.vikingexpansion.dowsing_rod.no_valuables": "No Valuable Materials Found!",
   "tooltip.vikingexpansion.dowsing_rod.tooltip.shift": "Right Click to Find Valuables!",
   "tooltip.vikingexpansion.dowsing_rod.tooltip": "Press §eSHIFT§r for more information!"
 }
