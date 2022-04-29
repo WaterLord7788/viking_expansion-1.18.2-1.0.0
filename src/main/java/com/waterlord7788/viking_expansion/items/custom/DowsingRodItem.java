@@ -3,6 +3,7 @@ package com.waterlord7788.viking_expansion.items.custom;
 import com.waterlord7788.viking_expansion.blocks.ModBlocks;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -14,8 +15,9 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
+import com.waterlord7788.viking_expansion.util.*;
 
 import java.util.List;
 
@@ -71,8 +73,15 @@ public class DowsingRodItem extends Item {
     }
 
     private boolean isValuableBlock(Block block) {
-        return block == Blocks.COAL_ORE || block == Blocks.COPPER_ORE
-                || block == Blocks.DIAMOND_ORE || block == Blocks.IRON_ORE;
+        /* Debug code to make my life easier
+        System.out.println("Debug: ");
+        System.out.println("ModTags.Blocks.DOWSING_ROD_VALUABLES value: " + ModTags.Blocks.DOWSING_ROD_VALUABLES);
+        String string = String.valueOf(ModTags.Blocks.DOWSING_ROD_VALUABLES);
+        System.out.println("IndexOf value: " + string.indexOf(String.valueOf(block)));
+        System.out.println("Block value: " + block);
+        System.out.println("End debug.");
+        */
+        return Registry.BLOCK.getHolderOrThrow(Registry.BLOCK.getResourceKey(block).get()).is(ModTags.Blocks.DOWSING_ROD_VALUABLES);
     }
 
 }
