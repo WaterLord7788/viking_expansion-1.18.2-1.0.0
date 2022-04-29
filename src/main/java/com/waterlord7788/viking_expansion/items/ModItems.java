@@ -1,7 +1,9 @@
 package com.waterlord7788.viking_expansion.items;
 
 import com.waterlord7788.viking_expansion.VikingExpansion;
+import com.waterlord7788.viking_expansion.items.custom.CoalCokeItem;
 import com.waterlord7788.viking_expansion.items.custom.DowsingRodItem;
+import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -22,6 +24,11 @@ public class ModItems {
     public static final RegistryObject<Item> DOWSING_ROD = ITEMS.register("dowsing_rod",
             () -> new DowsingRodItem(new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB).durability(16)));
 
+    public static final RegistryObject<Item> CUCUMBER = ITEMS.register("cucumber",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB).food(ModFoods.CUCUMBER)));
+
+    public static final RegistryObject<Item> COAL_COKE = ITEMS.register("coal_coke",
+            () -> new CoalCokeItem(new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

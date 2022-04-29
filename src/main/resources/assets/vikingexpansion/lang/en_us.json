@@ -2,6 +2,10 @@
   "item.vikingexpansion.sapphire": "Sapphire",
   "item.vikingexpansion.raw_sapphire": "Raw Sapphire",
   "item.vikingexpansion.dowsing_rod": "Dowsing Rod",
+  "item.vikingexpansion.cucumber": "Cucumber",
+  "item.vikingexpansion.coal_coke": "Coal Coke",
+
+
 
   "block.vikingexpansion.sapphire_block": "Sapphire Block",
   "block.vikingexpansion.raw_sapphire_block": "Raw Sapphire Block",
@@ -11,7 +15,11 @@
   "block.vikingexpansion.netherrack_sapphire_ore": "Netherrack Sapphire Ore",
   "block.vikingexpansion.speedy_block": "Speedy Block",
 
+
+
   "itemGroup.vikingexpansion": "Viking Expansion",
+
+
 
   "item.tutorialmod.dowsing_rod.no_valuables": "No Valuable Materials Found!"
 }
