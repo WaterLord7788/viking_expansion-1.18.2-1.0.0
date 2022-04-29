@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 import com.waterlord7788.viking_expansion.blocks.ModBlocks;
 import com.waterlord7788.viking_expansion.items.ModItems;
 import com.waterlord7788.viking_expansion.util.*;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -12,6 +14,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
@@ -36,10 +39,16 @@ public class VikingExpansion {
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
 
-        eventBus.addListener(this::setup);
+        eventBus.addListener(this::setup);        // This line is to call private void `clientSetup`.
+        eventBus.addListener(this::clientSetup);  // Without this `eventBus` method, we wouldn't have the void initialized at all.
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    private void clientSetup(final FMLClientSetupEvent event) {                                         // This is set to `translucent`, because the texture of
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.EBONY_DOOR.get(), RenderType.translucent());      // trapdoor has transparency of 1-99%. If it was 0% or
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.EBONY_TRAPDOOR.get(), RenderType.translucent());  // 100%, the `RenderType` would be cutout.
     }
 
     public void setup(final FMLCommonSetupEvent event) {

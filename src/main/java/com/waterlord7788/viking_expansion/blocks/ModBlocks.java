@@ -26,6 +26,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, VikingExpansion.MOD_ID);
 
+
     public static final RegistryObject<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(9f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
@@ -53,6 +54,7 @@ public class ModBlocks {
             ModCreativeModeTab.VIKINGEXPANSION_TAB);
 
 
+
     public static final RegistryObject<Block> SAPPHIRE_STAIRS = registerBlock("sapphire_stairs",
             () -> new StairBlock(() -> ModBlocks.SAPPHIRE_BLOCK.get().defaultBlockState(),
                     BlockBehaviour.Properties.of(Material.METAL).strength(5f)
@@ -70,6 +72,20 @@ public class ModBlocks {
     public static final RegistryObject<Block> SAPPHIRE_WALL = registerBlock("sapphire_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of(Material.METAL).strength(5f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
+
+
+    public static final RegistryObject<Block> SAPPHIRE_BUTTON = registerBlock("sapphire_button",
+            () -> new StoneButtonBlock(BlockBehaviour.Properties.of(Material.METAL).strength(5f)
+                    .requiresCorrectToolForDrops().noCollission()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
+    public static final RegistryObject<Block> SAPPHIRE_PRESSURE_PLATE = registerBlock("sapphire_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.METAL).strength(5f)
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
+    public static final RegistryObject<Block> EBONY_DOOR = registerBlock("ebony_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(5f)
+                    .requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
+    public static final RegistryObject<Block> EBONY_TRAPDOOR = registerBlock("ebony_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(5f)
+                    .requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
 
 
 

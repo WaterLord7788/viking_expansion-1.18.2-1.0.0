@@ -20,6 +20,11 @@
   "block.vikingexpansion.sapphire_fence": "Sapphire Fence",
   "block.vikingexpansion.sapphire_wall": "Sapphire Wall",
   "block.vikingexpansion.sapphire_fence_gate": "Sapphire Fence Gate",
+
+  "block.vikingexpansion.sapphire_button": "Sapphire Button",
+  "block.vikingexpansion.sapphire_pressure_plate": "Sapphire Pressure Plate",
+  "block.vikingexpansion.ebony_door": "Ebony Door",
+  "block.vikingexpansion.ebony_trapdoor": "Ebony Trapdoor",
   
   "itemGroup.vikingexpansion": "Viking Expansion",
 
