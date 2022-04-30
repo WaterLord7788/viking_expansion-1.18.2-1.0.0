@@ -54,7 +54,6 @@ public class ModBlocks {
             ModCreativeModeTab.VIKINGEXPANSION_TAB);
 
 
-
     public static final RegistryObject<Block> SAPPHIRE_STAIRS = registerBlock("sapphire_stairs",
             () -> new StairBlock(() -> ModBlocks.SAPPHIRE_BLOCK.get().defaultBlockState(),
                     BlockBehaviour.Properties.of(Material.METAL).strength(5f)

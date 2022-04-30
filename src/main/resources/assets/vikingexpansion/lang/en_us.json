@@ -5,6 +5,11 @@
   "item.vikingexpansion.cucumber": "Cucumber",
   "item.vikingexpansion.coal_coke": "Coal Coke",
 
+  "item.vikingexpansion.sapphire_pickaxe": "Sapphire Pickaxe",
+  "item.vikingexpansion.sapphire_axe": "Sapphire Axe",
+  "item.vikingexpansion.sapphire_shovel": "Sapphire Shovel",
+  "item.vikingexpansion.sapphire_hoe": "Sapphire Hoe",
+  "item.vikingexpansion.sapphire_sword": "Sapphire Sword",
 
 
   "block.vikingexpansion.sapphire_block": "Sapphire Block",
@@ -25,7 +30,8 @@
   "block.vikingexpansion.sapphire_pressure_plate": "Sapphire Pressure Plate",
   "block.vikingexpansion.ebony_door": "Ebony Door",
   "block.vikingexpansion.ebony_trapdoor": "Ebony Trapdoor",
-  
+
+
   "itemGroup.vikingexpansion": "Viking Expansion",
 
   "item.vikingexpansion.dowsing_rod.no_valuables": "No Valuable Materials Found!",
