@@ -3,6 +3,7 @@ package com.waterlord7788.viking_expansion.items;
 import com.waterlord7788.viking_expansion.VikingExpansion;
 import com.waterlord7788.viking_expansion.items.custom.CoalCokeItem;
 import com.waterlord7788.viking_expansion.items.custom.DowsingRodItem;
+import com.waterlord7788.viking_expansion.items.custom.ModArmorItem;
 import com.waterlord7788.viking_expansion.items.custom.PoisonSwordItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
@@ -55,7 +56,7 @@ public class ModItems {
 
     // Armor
     public static final RegistryObject<Item> SAPPHIRE_HELMET = ITEMS.register("sapphire_helmet",
-            () -> new ArmorItem(ModArmorMaterials.SAPPHIRE, EquipmentSlot.HEAD,
+            () -> new ModArmorItem(ModArmorMaterials.SAPPHIRE, EquipmentSlot.HEAD,
                     new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
     public static final RegistryObject<Item> SAPPHIRE_CHESTPLATE = ITEMS.register("sapphire_chestplate",
             () -> new ArmorItem(ModArmorMaterials.SAPPHIRE, EquipmentSlot.CHEST,

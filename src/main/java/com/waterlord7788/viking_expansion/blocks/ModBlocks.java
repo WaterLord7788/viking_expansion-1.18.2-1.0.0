@@ -6,6 +6,8 @@ import com.waterlord7788.viking_expansion.items.ModCreativeModeTab;
 import com.waterlord7788.viking_expansion.items.ModItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.ColorResolver;
 import net.minecraft.world.level.Level;
@@ -48,12 +50,13 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);*/
 
+    // Block, which adds a special effect on the person standing on it
     public static final RegistryObject<Block> SPEEDY_BLOCK = registerBlock("speedy_block",
             () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.STONE).strength(4f)
                     .requiresCorrectToolForDrops()),
             ModCreativeModeTab.VIKINGEXPANSION_TAB);
 
-
+    // Changing walking -> no need to jump to get over a block
     public static final RegistryObject<Block> SAPPHIRE_STAIRS = registerBlock("sapphire_stairs",
             () -> new StairBlock(() -> ModBlocks.SAPPHIRE_BLOCK.get().defaultBlockState(),
                     BlockBehaviour.Properties.of(Material.METAL).strength(5f)
@@ -62,6 +65,7 @@ public class ModBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.of(Material.METAL).strength(5f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
 
+    // Someway interactable
     public static final RegistryObject<Block> SAPPHIRE_FENCE = registerBlock("sapphire_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.of(Material.METAL).strength(5f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
@@ -72,7 +76,7 @@ public class ModBlocks {
             () -> new WallBlock(BlockBehaviour.Properties.of(Material.METAL).strength(5f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
 
-
+    // Interactable
     public static final RegistryObject<Block> SAPPHIRE_BUTTON = registerBlock("sapphire_button",
             () -> new StoneButtonBlock(BlockBehaviour.Properties.of(Material.METAL).strength(5f)
                     .requiresCorrectToolForDrops().noCollission()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
@@ -86,7 +90,20 @@ public class ModBlocks {
             () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(5f)
                     .requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
 
+    // Flowers
+    public static final RegistryObject<Block> PINK_ROSE = registerBlock("pink_rose",
+            () -> new FlowerBlock(MobEffects.HEAL, 8,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
 
+    public static final RegistryObject<Block> POTTED_PINK_ROSE = registerBlockWithoutBlockItem("potted_pink_rose",
+            () -> new FlowerPotBlock(null, ModBlocks.PINK_ROSE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
+
+
+
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block){
+        return BLOCKS.register(name, block);
+    }
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab, String tooltipKey){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
