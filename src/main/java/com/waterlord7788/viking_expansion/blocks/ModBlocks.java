@@ -38,15 +38,15 @@ public class ModBlocks {
     public static final RegistryObject<Block> SAPPHIRE_ORE = registerBlock("sapphire_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
-    public static final RegistryObject<Block> DEEPSLATE_SAPPHIRE_ORE = registerBlock("deepslate_sapphire_ore",
+    /*public static final RegistryObject<Block> DEEPSLATE_SAPPHIRE_ORE = registerBlock("deepslate_sapphire_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
-                    .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
-    public static final RegistryObject<Block> ENDSTONE_SAPPHIRE_ORE = registerBlock("endstone_sapphire_ore",
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);*/
+    /*public static final RegistryObject<Block> ENDSTONE_SAPPHIRE_ORE = registerBlock("endstone_sapphire_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
-                    .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
-    public static final RegistryObject<Block> NETHERRACK_SAPPHIRE_ORE = registerBlock("netherrack_sapphire_ore",
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);*/
+    /*public static final RegistryObject<Block> NETHERRACK_SAPPHIRE_ORE = registerBlock("netherrack_sapphire_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
-                    .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.VIKINGEXPANSION_TAB);*/
 
     public static final RegistryObject<Block> SPEEDY_BLOCK = registerBlock("speedy_block",
             () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.STONE).strength(4f)
