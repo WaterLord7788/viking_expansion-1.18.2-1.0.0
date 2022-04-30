@@ -1,6 +1,7 @@
 package com.waterlord7788.viking_expansion.blocks;
 
 import com.waterlord7788.viking_expansion.VikingExpansion;
+import com.waterlord7788.viking_expansion.blocks.custom.SapphireLampBlock;
 import com.waterlord7788.viking_expansion.blocks.custom.SpeedyBlock;
 import com.waterlord7788.viking_expansion.items.ModCreativeModeTab;
 import com.waterlord7788.viking_expansion.items.ModItems;
@@ -94,11 +95,19 @@ public class ModBlocks {
     public static final RegistryObject<Block> PINK_ROSE = registerBlock("pink_rose",
             () -> new FlowerBlock(MobEffects.HEAL, 8,
                     BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
-
     public static final RegistryObject<Block> POTTED_PINK_ROSE = registerBlockWithoutBlockItem("potted_pink_rose",
             () -> new FlowerPotBlock(null, ModBlocks.PINK_ROSE,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
 
+    // Transparent blocks
+    public static final RegistryObject<Block> WINTER_WINDOW = registerBlock("winter_window",
+            () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion()), ModCreativeModeTab.VIKINGEXPANSION_TAB);
+
+    // Lamps
+    public static final RegistryObject<Block> SAPPHIRE_LAMP = registerBlock("sapphire_lamp",
+            () -> new SapphireLampBlock(BlockBehaviour.Properties.of(Material.METAL).strength(2f)
+                    .requiresCorrectToolForDrops().lightLevel(       // The line below returns light level of 15, if we clicked on the lamp.
+                            (state) -> state.getValue(SapphireLampBlock.CLICKED) ? 15 : 0)), ModCreativeModeTab.VIKINGEXPANSION_TAB);
 
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block){
