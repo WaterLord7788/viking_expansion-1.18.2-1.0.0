@@ -4,6 +4,7 @@ import com.waterlord7788.viking_expansion.VikingExpansion;
 import com.waterlord7788.viking_expansion.items.custom.CoalCokeItem;
 import com.waterlord7788.viking_expansion.items.custom.DowsingRodItem;
 import com.waterlord7788.viking_expansion.items.custom.PoisonSwordItem;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -52,26 +53,24 @@ public class ModItems {
             () -> new HoeItem(ModTiers.SAPPHIRE, 0, 0f,
                     new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
 
+    // Armor
+    public static final RegistryObject<Item> SAPPHIRE_HELMET = ITEMS.register("sapphire_helmet",
+            () -> new ArmorItem(ModArmorMaterials.SAPPHIRE, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
+    public static final RegistryObject<Item> SAPPHIRE_CHESTPLATE = ITEMS.register("sapphire_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.SAPPHIRE, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
+    public static final RegistryObject<Item> SAPPHIRE_LEGGINGS = ITEMS.register("sapphire_leggings",
+            () -> new ArmorItem(ModArmorMaterials.SAPPHIRE, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
+    public static final RegistryObject<Item> SAPPHIRE_BOOTS = ITEMS.register("sapphire_boots",
+            () -> new ArmorItem(ModArmorMaterials.SAPPHIRE, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
+
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
