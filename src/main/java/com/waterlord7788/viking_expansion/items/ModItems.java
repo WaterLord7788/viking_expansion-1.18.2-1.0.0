@@ -68,6 +68,10 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.SAPPHIRE, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
 
+    // Item with animated texture
+    public static final RegistryObject<Item> MAGIC_DUST = ITEMS.register("magic_dust",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
+
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
