@@ -3,6 +3,7 @@ package com.waterlord7788.viking_expansion;
 import com.mojang.logging.LogUtils;
 import com.waterlord7788.viking_expansion.blocks.ModBlocks;
 import com.waterlord7788.viking_expansion.items.ModItems;
+import com.waterlord7788.viking_expansion.painting.ModPaintings;
 import com.waterlord7788.viking_expansion.util.*;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -37,8 +38,10 @@ public class VikingExpansion {
     public VikingExpansion() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModPaintings.register(eventBus);
+
+        ModItems.register(eventBus);
 
         eventBus.addListener(this::setup);        // This line is to call private void `clientSetup`.
         eventBus.addListener(this::clientSetup);  // Without this `eventBus` method, we wouldn't have the void initialized at all.

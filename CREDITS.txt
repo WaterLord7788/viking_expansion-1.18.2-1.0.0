@@ -1,0 +1,15 @@
+Most textures by nanoattack, excluding SAPPHIRE ORE and SAPPHIRE SWORD, which are made by WaterLord:
+https://www.fiverr.com/nanoattack/help-design-and-draw-pixel-art
+
+Distributed under CC BY-SA 4.0 International License:
+https://creativecommons.org/licenses/by-sa/4.0/
+
+
+IMPORTANT - If you use those textures, add this file to your repository and add this to your project!
+
+
+Paintings (family, marathon) by Starlotte:
+https://www.curseforge.com/minecraft/mc-mods/sweet-not-savoury
+
+Distributed under CC BY-SA 4.0 International License:
+https://creativecommons.org/licenses/by-sa/4.0/
