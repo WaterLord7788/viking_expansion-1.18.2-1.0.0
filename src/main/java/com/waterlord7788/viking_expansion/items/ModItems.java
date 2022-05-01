@@ -1,10 +1,7 @@
 package com.waterlord7788.viking_expansion.items;
 
 import com.waterlord7788.viking_expansion.VikingExpansion;
-import com.waterlord7788.viking_expansion.items.custom.CoalCokeItem;
-import com.waterlord7788.viking_expansion.items.custom.DowsingRodItem;
-import com.waterlord7788.viking_expansion.items.custom.ModArmorItem;
-import com.waterlord7788.viking_expansion.items.custom.PoisonSwordItem;
+import com.waterlord7788.viking_expansion.items.custom.*;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -71,6 +68,10 @@ public class ModItems {
     // Item with animated texture
     public static final RegistryObject<Item> MAGIC_DUST = ITEMS.register("magic_dust",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
+
+    // Item with NBT data. This item illustrates how to work with NBT data so, this is just an example.
+    public static final RegistryObject<Item> DATA_TABLET = ITEMS.register("data_tablet",
+            () -> new DataTabletItem(new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB).stacksTo(1)));
 
 
     public static void register(IEventBus eventBus){
