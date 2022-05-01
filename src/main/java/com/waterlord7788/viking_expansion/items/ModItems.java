@@ -73,8 +73,9 @@ public class ModItems {
     public static final RegistryObject<Item> DATA_TABLET = ITEMS.register("data_tablet",
             () -> new DataTabletItem(new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB).stacksTo(1)));
 
+    // Bow with modified attack damage
     public static final RegistryObject<Item> SAPPHIRE_BOW = ITEMS.register("sapphire_bow",
-            () -> new BowItem(new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB).durability(500)));
+            () -> new SapphireBowItem(new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB).durability(500)));
 
 
     public static void register(IEventBus eventBus){
