@@ -58,6 +58,8 @@ public class VikingExpansion {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_PINK_ROSE.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WINTER_WINDOW.get(), RenderType.translucent());
+
+        ModItemProperties.addCustomItemProperties(); // Registering bow animation, when pulling and loading an arrow
     }
 
     public void setup(final FMLCommonSetupEvent event) {

@@ -1,0 +1,6 @@
+{
+  "parent": "vikingexpansion:item/sapphire_bow",
+  "textures": {
+    "layer0": "vikingexpansion:item/sapphire_bow_pulling_1"
+  }
+}
