@@ -1,6 +1,7 @@
 package com.waterlord7788.viking_expansion.blocks;
 
 import com.waterlord7788.viking_expansion.VikingExpansion;
+import com.waterlord7788.viking_expansion.blocks.custom.CucumberPlantBlock;
 import com.waterlord7788.viking_expansion.blocks.custom.SapphireLampBlock;
 import com.waterlord7788.viking_expansion.blocks.custom.SpeedyBlock;
 import com.waterlord7788.viking_expansion.items.ModCreativeModeTab;
@@ -108,6 +109,10 @@ public class ModBlocks {
             () -> new SapphireLampBlock(BlockBehaviour.Properties.of(Material.METAL).strength(2f)
                     .requiresCorrectToolForDrops().lightLevel(       // The line below returns light level of 15, if we clicked on the lamp.
                             (state) -> state.getValue(SapphireLampBlock.CLICKED) ? 15 : 0)), ModCreativeModeTab.VIKINGEXPANSION_TAB);
+
+    // Crops
+    public static final RegistryObject<Block> CUCUMBER_PLANT = registerBlockWithoutBlockItem("cucumber_plant",
+            () -> new CucumberPlantBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block){

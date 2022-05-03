@@ -1,6 +1,7 @@
 package com.waterlord7788.viking_expansion.items;
 
 import com.waterlord7788.viking_expansion.VikingExpansion;
+import com.waterlord7788.viking_expansion.blocks.ModBlocks;
 import com.waterlord7788.viking_expansion.items.custom.*;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
@@ -76,6 +77,11 @@ public class ModItems {
     // Bow with modified attack damage
     public static final RegistryObject<Item> SAPPHIRE_BOW = ITEMS.register("sapphire_bow",
             () -> new SapphireBowItem(new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB).durability(500)));
+
+    // Seeds
+    public static final RegistryObject<Item> CUCUMBER_SEEDS = ITEMS.register("cucumber_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.CUCUMBER_PLANT.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
 
 
     public static void register(IEventBus eventBus){
