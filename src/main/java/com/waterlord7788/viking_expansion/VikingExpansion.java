@@ -2,6 +2,7 @@ package com.waterlord7788.viking_expansion;
 
 import com.mojang.logging.LogUtils;
 import com.waterlord7788.viking_expansion.blocks.ModBlocks;
+import com.waterlord7788.viking_expansion.entity.ModEntityType;
 import com.waterlord7788.viking_expansion.items.ModItems;
 import com.waterlord7788.viking_expansion.painting.ModPaintings;
 import com.waterlord7788.viking_expansion.util.*;
@@ -14,6 +15,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -40,8 +42,8 @@ public class VikingExpansion {
 
         ModBlocks.register(eventBus);
         ModPaintings.register(eventBus);
-
         ModItems.register(eventBus);
+        //ModEntityType.register(eventBus);
 
         eventBus.addListener(this::setup);        // This line is to call private void `clientSetup`.
         eventBus.addListener(this::clientSetup);  // Without this `eventBus` method, we wouldn't have the void initialized at all.
@@ -72,31 +74,4 @@ public class VikingExpansion {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.PINK_ROSE.getId(), ModBlocks.POTTED_PINK_ROSE);
         });
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -3,14 +3,17 @@ package com.waterlord7788.viking_expansion.items;
 import com.waterlord7788.viking_expansion.VikingExpansion;
 import com.waterlord7788.viking_expansion.blocks.ModBlocks;
 import com.waterlord7788.viking_expansion.items.custom.*;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModItems {
+public class ModItems extends Items {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, VikingExpansion.MOD_ID);
 
@@ -78,11 +81,14 @@ public class ModItems {
     public static final RegistryObject<Item> SAPPHIRE_BOW = ITEMS.register("sapphire_bow",
             () -> new SapphireBowItem(new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB).durability(500)));
 
+    // Arrows
+    public static final RegistryObject<Item> SAPPHIRE_ARROW = ITEMS.register("sapphire_arrow",
+            () -> new SapphireArrowItem(new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
+
     // Seeds
     public static final RegistryObject<Item> CUCUMBER_SEEDS = ITEMS.register("cucumber_seeds",
             () -> new ItemNameBlockItem(ModBlocks.CUCUMBER_PLANT.get(),
                     new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
-
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

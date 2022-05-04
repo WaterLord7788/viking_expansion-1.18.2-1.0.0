@@ -1,5 +1,6 @@
 package com.waterlord7788.viking_expansion.items.custom;
 
+import com.waterlord7788.viking_expansion.items.ModItems;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -40,14 +41,15 @@ public class SapphireBowItem extends BowItem {
 
             if (!itemstack.isEmpty() || flag) {
                 if (itemstack.isEmpty()) {
-                    itemstack = new ItemStack(Items.ARROW);
+                    itemstack = new ItemStack(ModItems.SAPPHIRE_ARROW.get());
                 }
 
                 float f = getPowerForTime(i);
                 if (!((double)f < 0.1D)) {
-                    boolean flag1 = player.getAbilities().instabuild || (itemstack.getItem() instanceof ArrowItem && ((ArrowItem)itemstack.getItem()).isInfinite(itemstack, pStack, player));
+                    boolean flag1 = player.getAbilities().instabuild || (itemstack.getItem() instanceof SapphireArrowItem && ((SapphireArrowItem)itemstack.getItem()).isInfinite(itemstack, pStack, player));
                     if (!pLevel.isClientSide) {
-                        ArrowItem arrowitem = (ArrowItem)(itemstack.getItem() instanceof ArrowItem ? itemstack.getItem() : Items.ARROW);
+                        ArrowItem arrowitem = (ArrowItem) (itemstack.getItem() instanceof ArrowItem ? itemstack.getItem() : Items.ARROW);
+                        //SapphireArrowItem arrowitem = (SapphireArrowItem)(itemstack.getItem() instanceof SapphireArrowItem ? itemstack.getItem() : ModItems.SAPPHIRE_ARROW.get());
                         AbstractArrow abstractarrow = arrowitem.createArrow(pLevel, itemstack, player);
                         abstractarrow = customArrow(abstractarrow);
                         abstractarrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, f * 3.0F, 1.0F);
@@ -105,7 +107,7 @@ public class SapphireBowItem extends BowItem {
      * Gets the velocity of the arrow entity from the bow's charge
      */
     public static float getPowerForTime(int pCharge) {
-        float f = (float)pCharge / 20.0F; // Default is 20.0F
+        float f = (float)pCharge / (float)MAX_DRAW_DURATION; // Default is 20.0F
         f = (f * f + f * 2.0F) / 3.0F;
         if (f > 1.0F) {
             f = 1.0F;
