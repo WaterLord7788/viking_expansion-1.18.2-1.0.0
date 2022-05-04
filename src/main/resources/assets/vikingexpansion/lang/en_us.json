@@ -51,5 +51,7 @@
 
   "item.vikingexpansion.dowsing_rod.no_valuables": "No Valuable Materials Found!",
   "tooltip.vikingexpansion.dowsing_rod.tooltip.shift": "Right Click to Find Valuables!",
-  "tooltip.vikingexpansion.dowsing_rod.tooltip": "Press §eSHIFT§r for more information!"
+  "tooltip.vikingexpansion.dowsing_rod.tooltip": "Press §eSHIFT§r for more information!",
+
+  "sounds.vikingexpansion.dowsing_rod_found_ore": "Dowsing Rod Found Ores Sound"
 }
