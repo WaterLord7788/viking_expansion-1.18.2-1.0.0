@@ -21,6 +21,9 @@ public class ModSounds {
     public static RegistryObject<SoundEvent> SAPPHIRE_LAMP_HIT = registerSoundEvent("sapphire_lamp_hit");
     public static RegistryObject<SoundEvent> SAPPHIRE_LAMP_FALL = registerSoundEvent("sapphire_lamp_fall");
 
+    // Viking sound for a music disc
+    public static RegistryObject<SoundEvent> BORGAR_ALEXANDER_NAKARADA = registerSoundEvent("borgar_alexander_nakarada");
+
 
     public static final ForgeSoundType SAPPHIRE_LAMP_SOUNDS = new ForgeSoundType(1f, 1f,
             ModSounds.SAPPHIRE_LAMP_BREAK, ModSounds.SAPPHIRE_LAMP_STEP, ModSounds.SAPPHIRE_LAMP_PLACE,

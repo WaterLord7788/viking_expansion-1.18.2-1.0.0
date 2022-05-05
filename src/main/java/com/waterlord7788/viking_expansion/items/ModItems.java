@@ -3,6 +3,7 @@ package com.waterlord7788.viking_expansion.items;
 import com.waterlord7788.viking_expansion.VikingExpansion;
 import com.waterlord7788.viking_expansion.blocks.ModBlocks;
 import com.waterlord7788.viking_expansion.items.custom.*;
+import com.waterlord7788.viking_expansion.sound.ModSounds;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -89,6 +90,12 @@ public class ModItems extends Items {
     public static final RegistryObject<Item> CUCUMBER_SEEDS = ITEMS.register("cucumber_seeds",
             () -> new ItemNameBlockItem(ModBlocks.CUCUMBER_PLANT.get(),
                     new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)));
+
+    public static final RegistryObject<Item> BORGAR_ALEXANDER_NAKARADA_MUSIC_DISC = ITEMS.register("borgar_alexander_nakarada_music_disc",
+            () -> new RecordItem(4, ModSounds.BORGAR_ALEXANDER_NAKARADA,
+                    new Item.Properties().tab(ModCreativeModeTab.VIKINGEXPANSION_TAB)
+                            .stacksTo(1)));
+
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

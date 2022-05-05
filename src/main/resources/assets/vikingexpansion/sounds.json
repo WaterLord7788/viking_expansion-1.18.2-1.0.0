@@ -34,5 +34,13 @@
     "sounds": [
       "vikingexpansion:sapphire_lamp_fall"
     ]
+  },
+  "borgar_alexander_nakarada": {
+    "sounds": [
+      {
+      "name": "vikingexpansion:borgar_alexander_nakarada",
+      "stream": true
+      }
+    ]
   }
 }
