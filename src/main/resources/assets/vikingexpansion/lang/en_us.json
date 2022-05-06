@@ -50,11 +50,18 @@
   "block.vikingexpansion.winter_window": "Winter Window",
   "block.vikingexpansion.sapphire_lamp": "Sapphire Lamp",
 
+  "block.vikingexpansion.redwood_log": "Redwood Log",
+  "block.vikingexpansion.redwood_planks": "Redwood Planks",
+  "block.vikingexpansion.redwood_wood": "Redwood Wood",
+  "block.vikingexpansion.stripped_redwood_log": "Stripped Redwood Log",
+  "block.vikingexpansion.stripped_redwood_wood": "Stripped Redwood Wood",
+  "block.vikingexpansion.redwood_sapling": "Redwood Sapling",
+
   "itemGroup.vikingexpansion": "Viking Expansion",
 
   "item.vikingexpansion.dowsing_rod.no_valuables": "No Valuable Materials Found!",
   "tooltip.vikingexpansion.dowsing_rod.tooltip.shift": "Right Click to Find Valuables!",
   "tooltip.vikingexpansion.dowsing_rod.tooltip": "Press §eSHIFT§r for more information!",
 
-  "sounds.vikingexpansion.dowsing_rod_found_ore": "Dowsing Rod Found Ores Sound"
+  "sounds.vikingexpansion.dowsing_rod_found_ore": "Dowsing Rod Found Item Sound"
 }
