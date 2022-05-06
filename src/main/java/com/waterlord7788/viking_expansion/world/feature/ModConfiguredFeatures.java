@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.waterlord7788.viking_expansion.blocks.ModBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.TreePlacements;
@@ -13,10 +14,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaPineFoliagePlacer;
@@ -46,7 +44,6 @@ public class ModConfiguredFeatures {
             PlacementUtils.register("redwood_checked", REDWOOD_TREE,
                     PlacementUtils.filteredByBlockSurvival(ModBlocks.REDWOOD_SAPLING.get()));
 
-
     public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> REDWOOD_SPAWN =
             FeatureUtils.register("redwood_spawn", Feature.RANDOM_SELECTOR,
                     new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(REDWOOD_CHECKED,
@@ -58,16 +55,14 @@ public class ModConfiguredFeatures {
             FeatureUtils.register("mega_redwood", Feature.TREE, (new TreeConfiguration.TreeConfigurationBuilder(
                     BlockStateProvider.simple(ModBlocks.REDWOOD_LOG.get()),
                     //new GiantTrunkPlacer(30, 10, 20)
-                    new DarkOakTrunkPlacer(15, 4, 10),
+                    new DarkOakTrunkPlacer(15, 10, 10),
                     BlockStateProvider.simple(Blocks.SPRUCE_LEAVES),
                     new MegaPineFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), UniformInt.of(10, 18)),
                     new TwoLayersFeatureSize(10, 1, 10))).decorators(ImmutableList.of(new AlterGroundDecorator(BlockStateProvider.simple(Blocks.PODZOL)))).build());
 
-
     public static final Holder<PlacedFeature> MEGA_REDWOOD_CHECKED =
             PlacementUtils.register("mega_redwood_checked", MEGA_REDWOOD_TREE,
                     PlacementUtils.filteredByBlockSurvival(ModBlocks.REDWOOD_SAPLING.get()));
-
 
     public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> MEGA_REDWOOD_SPAWN =
             FeatureUtils.register("mega_redwood_spawn", Feature.RANDOM_SELECTOR,
@@ -80,4 +75,13 @@ public class ModConfiguredFeatures {
             FeatureUtils.register("flower_pink_rose", Feature.FLOWER,
                     new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                             new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.PINK_ROSE.get())))));
+
+
+
+    public static final List<OreConfiguration.TargetBlockState> OVERWORLD_SAPPHIRE_ORES = List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.SAPPHIRE_ORE.get().defaultBlockState())/*,
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_CITRINE_ORE.get().defaultBlockState())*/);
+
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> SAPPHIRE_ORE = FeatureUtils.register("sapphire_ore",
+            Feature.ORE, new OreConfiguration(OVERWORLD_SAPPHIRE_ORES, 9));
 }
