@@ -18,12 +18,21 @@ public class ModTreeGeneration {
         ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());
         Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
 
-        if(types.contains(BiomeDictionary.Type.COLD)) {
+        if(types.contains(BiomeDictionary.Type.COLD)) { // BiomeDictionary.Type.COLD
             List<Holder<PlacedFeature>> base =
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
             base.add(ModPlacedFeatures.REDWOOD_PLACED);
             base.add(ModPlacedFeatures.MEGA_REDWOOD_PLACED);
+            base.add(ModPlacedFeatures.MEGA_DENSE_REDWOOD_PLACED);
         }
+        /*
+        if(types.contains(BiomeDictionary.Type.PLAINS)) { // BiomeDictionary.Type.COLD
+            List<Holder<PlacedFeature>> base =
+                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
+
+            base.add(ModPlacedFeatures.MEGA_DENSE_REDWOOD_PLACED);
+        }
+        */
     }
 }

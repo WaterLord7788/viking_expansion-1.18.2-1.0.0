@@ -17,6 +17,11 @@ public class ModPlacedFeatures {
                     PlacementUtils.countExtra(3, 0.1f, 2)
             ));
 
+    public static final Holder<PlacedFeature> MEGA_DENSE_REDWOOD_PLACED = PlacementUtils.register("mega_dense_redwood_placed",
+            ModConfiguredFeatures.MEGA_DENSE_REDWOOD_SPAWN, VegetationPlacements.treePlacement(
+                    PlacementUtils.countExtra(3, 0.1f, 2)
+            ));
+
     public static final Holder<PlacedFeature> PINK_ROSE_PLACED = PlacementUtils.register("pink_rose_placed",
             ModConfiguredFeatures.PINK_ROSE, RarityFilter.onAverageOnceEvery(16),
             InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
