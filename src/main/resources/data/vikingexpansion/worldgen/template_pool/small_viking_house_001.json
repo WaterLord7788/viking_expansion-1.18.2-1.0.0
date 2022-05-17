@@ -1,0 +1,15 @@
+{
+  "name": "vikingexpansion:small_viking_house_001",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "vikingexpansion:small_viking_house_001",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

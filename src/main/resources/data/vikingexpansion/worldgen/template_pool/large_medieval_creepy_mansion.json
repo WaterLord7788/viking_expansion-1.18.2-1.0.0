@@ -1,0 +1,15 @@
+{
+  "name": "vikingexpansion:large_medieval_creepy_mansion",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "vikingexpansion:large_medieval_creepy_mansion",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

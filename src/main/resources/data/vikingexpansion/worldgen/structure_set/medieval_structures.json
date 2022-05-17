@@ -1,0 +1,26 @@
+{
+  "structures": [
+    {
+      "structure": "vikingexpansion:large_medieval_creepy_mansion",
+      "weight": 1
+    },
+    {
+      "structure": "vikingexpansion:medium_medieval_forge",
+      "weight": 1
+    },
+    {
+      "structure": "vikingexpansion:medium_medieval_house",
+      "weight": 1
+    },
+    {
+      "structure": "vikingexpansion:medium_medieval_library",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 21,
+    "separation": 20,
+    "salt": 8960772
+  }
+}

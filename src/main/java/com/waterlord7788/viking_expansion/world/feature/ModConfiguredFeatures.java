@@ -17,19 +17,19 @@ import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaPineFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.PineFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.AlterGroundDecorator;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.*;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import java.util.List;
 
-// CF -> PF -> CF -> PF, where `CF` means configured feature and `PF` means placed feature
+// CF -> PF -> CF -> PF and TG
+// Where `CF` means configured feature and `PF` means placed feature
+// `TG` means tree generation
 public class ModConfiguredFeatures {
     // Next chunk of code is needed to spawn a tree from a sapling
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>>          REDWOOD_TREE = FeatureUtils.register("redwood", Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(ModBlocks.REDWOOD_LOG.get()), new StraightTrunkPlacer(5, 6, 3), BlockStateProvider.simple(Blocks.SPRUCE_LEAVES),/* MEGA_DENSE_REDWOODing with different foliage placers --> */new PineFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), UniformInt.of(3, 4)), new TwoLayersFeatureSize(1, 0, 2)).build()); // Add `dirt()` method, if you want your sapling to be placed on different block
@@ -57,6 +57,7 @@ public class ModConfiguredFeatures {
                             new WeightedPlacedFeature(MEGA_REDWOOD_CHECKED, 0.10769232F)), TreePlacements.SPRUCE_CHECKED));
 
 
+
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> MEGA_DENSE_REDWOOD =
             FeatureUtils.register("mega_dense_redwood", Feature.TREE, (new TreeConfiguration.TreeConfigurationBuilder(
                     BlockStateProvider.simple(ModBlocks.REDWOOD_LOG.get()),
@@ -77,6 +78,26 @@ public class ModConfiguredFeatures {
 
 
 
+    public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> EXPERIMENT =
+            FeatureUtils.register("experiment", Feature.TREE, (new TreeConfiguration.TreeConfigurationBuilder(
+                    BlockStateProvider.simple(Blocks.OAK_LOG),
+                    //new GiantTrunkPlacer(30, 10, 20)
+                    new FancyTrunkPlacer(15, 10, 10),
+                    BlockStateProvider.simple(Blocks.OAK_LEAVES),
+                    new MegaPineFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), UniformInt.of(10, 18)),
+                    new TwoLayersFeatureSize(1, 1, 1))).build());
+
+    public static final Holder<PlacedFeature> EXPERIMENT_CHECKED =
+            PlacementUtils.register("experiment_checked", EXPERIMENT,
+                    PlacementUtils.filteredByBlockSurvival(ModBlocks.REDWOOD_SAPLING.get()));
+
+    public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> EXPERIMENT_SPAWN =
+            FeatureUtils.register("experiment_spawn", Feature.RANDOM_SELECTOR,
+                    new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(EXPERIMENT_CHECKED, 0.025641026F),
+                            new WeightedPlacedFeature(EXPERIMENT_CHECKED, 0.05769232F)), TreePlacements.OAK_CHECKED));
+
+
+
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PINK_ROSE =
             FeatureUtils.register("flower_pink_rose", Feature.FLOWER,
                     new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
@@ -85,9 +106,21 @@ public class ModConfiguredFeatures {
 
 
     public static final List<OreConfiguration.TargetBlockState> OVERWORLD_SAPPHIRE_ORES = List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.SAPPHIRE_ORE.get().defaultBlockState())/*,
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_CITRINE_ORE.get().defaultBlockState())*/);
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.SAPPHIRE_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get().defaultBlockState()));
 
     public static final Holder<ConfiguredFeature<OreConfiguration, ?>> SAPPHIRE_ORE = FeatureUtils.register("sapphire_ore",
             Feature.ORE, new OreConfiguration(OVERWORLD_SAPPHIRE_ORES, 9));
+
+
+    /*
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_PUMPKIN = FeatureUtils.register("patch_pumpkin",
+            Feature.RANDOM_PATCH,
+            FeatureUtils.simplePatchConfiguration(
+                    Feature.SIMPLE_BLOCK,
+                    new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.PUMPKIN)),
+                    List.of(Blocks.GRASS_BLOCK)
+            )
+    );
+     */
 }

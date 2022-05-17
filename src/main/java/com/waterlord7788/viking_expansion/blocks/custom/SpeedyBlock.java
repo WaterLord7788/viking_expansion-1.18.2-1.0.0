@@ -1,5 +1,6 @@
 package com.waterlord7788.viking_expansion.blocks.custom;
 
+import net.minecraft.commands.Commands;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -24,7 +25,6 @@ public class SpeedyBlock extends Block {
                 livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300));
             }
         }
-
         super.stepOn(pLevel, pPos, pState, pEntity);
     }
 }

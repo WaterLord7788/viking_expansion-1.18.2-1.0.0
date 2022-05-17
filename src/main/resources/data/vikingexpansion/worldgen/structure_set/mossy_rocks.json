@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "vikingexpansion:medium_mossy_rock_001",
+      "weight": 1
+    },
+    {
+      "structure": "vikingexpansion:medium_mossy_rock_002",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 19,
+    "separation": 16,
+    "salt": 5035411
+  }
+}

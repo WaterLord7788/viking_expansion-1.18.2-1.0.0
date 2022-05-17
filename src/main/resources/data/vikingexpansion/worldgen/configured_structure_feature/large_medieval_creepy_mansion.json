@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:village",
+  "config": {
+    "start_pool": "vikingexpansion:large_medieval_creepy_mansion",
+    "size": 1
+  },
+  "biomes": "#minecraft:is_forest",
+  "adapt_noise": true,
+  "spawn_overrides": {}
+}

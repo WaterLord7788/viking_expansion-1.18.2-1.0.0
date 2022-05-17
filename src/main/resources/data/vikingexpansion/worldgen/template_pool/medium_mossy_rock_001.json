@@ -1,0 +1,15 @@
+{
+  "name": "vikingexpansion:medium_mossy_rock_001",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "vikingexpansion:medium_mossy_rock_001",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

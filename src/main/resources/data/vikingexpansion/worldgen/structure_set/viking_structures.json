@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "vikingexpansion:small_viking_house_001",
+      "weight": 1
+    },
+    {
+      "structure": "vikingexpansion:small_viking_house_002",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 20,
+    "separation": 19,
+    "salt": 4968185
+  }
+}
